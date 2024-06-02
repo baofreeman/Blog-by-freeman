@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  gap: 20px;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1;
+  font-weight: bold;
+}
+
+.buger {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    font-size: 2.8rem;
+  }
+  .links {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .logo {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .links {
+    justify-content: flex-end;
+  }
+  .link {
+    display: none;
+  }
+}
