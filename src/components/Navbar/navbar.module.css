@@ -9,8 +9,10 @@
 .logo {
   flex: 1;
   text-align: center;
-  font-size: 2.8rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-self: start;
 }
 
 .links {

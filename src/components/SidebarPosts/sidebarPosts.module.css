@@ -69,7 +69,11 @@
 .postTitle {
   font-size: 1.8rem;
   font-weight: 500;
+  width: 150px;
   color: var(--softTextColor);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .detail {

@@ -20,11 +20,10 @@ const getData = async () => {
 
 const SidebarPosts = async ({ withImage }: withImageType) => {
   const data = await getData();
-  console.log("Data", data);
   return (
     <div className={styles.items}>
       {data?.map((item: any) => (
-        <Link href="/" className={styles.item}>
+        <Link href={`/posts/${item?.title}`} className={styles.item}>
           {withImage && (
             <div className={styles.imageContainer}>
               <Image

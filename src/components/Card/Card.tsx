@@ -18,9 +18,9 @@ const Card = ({ key, item }: { key: any; item: any }) => {
           <span className={styles.category}>{item.catSlug}</span>
         </div>
         <Link href={`/posts/${item.slug}`}>
-          <h1>{item.title}</h1>
+          <h1 className={styles.cardTitle}>{item.title}</h1>
         </Link>
-        <p>{item.desc.substring(0, 60)}</p>
+        <p className={styles?.desc}>{item?.desc}</p>
         <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More
         </Link>
