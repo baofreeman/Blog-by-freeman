@@ -4,22 +4,10 @@ import styles from "./sidebarPosts.module.css";
 
 type withImageType = {
   withImage: boolean;
+  data: any;
 };
 
-const getData = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/posts/popular");
-    if (!res.ok) {
-      throw new Error("failed");
-    }
-    return res.json();
-  } catch (error) {
-    return error;
-  }
-};
-
-const SidebarPosts = async ({ withImage }: withImageType) => {
-  const data = await getData();
+const SidebarPosts = async ({ withImage, data }: withImageType) => {
   return (
     <div className={styles.items}>
       {data?.map((item: any) => (

@@ -11,13 +11,13 @@ const Navbar = () => {
       </div>
       <div className={styles.links}>
         <Link href="/" className={styles.link}>
-          Homepage
+          <span className={styles.linkTitle}>Homepage</span>
         </Link>
-        <Link href="/" className={styles.link}>
-          Contact
+        <Link href="/blog" className={styles.link}>
+          <span className={styles.linkTitle}>Blog</span>
         </Link>
-        <Link href="/" className={styles.link}>
-          About
+        <Link href="/about" className={styles.link}>
+          <span className={styles.linkTitle}>About</span>
         </Link>
       </div>
       <div className={styles.buger}>
