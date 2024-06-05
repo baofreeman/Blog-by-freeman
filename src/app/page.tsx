@@ -1,8 +1,8 @@
-import CardList from "../components/CardList/CardList";
-import CategoryList from "../components/CategoryList/CategoryList";
-import Featured from "../components/Featured/Featured";
-import Sidebar from "../components/Sidebar/Sidebar";
+import CategoryList from "@/components/CategoryList/CategoryList";
 import styles from "./page.module.css";
+import Featured from "@/components/Featured/Featured";
+import CardList from "@/components/CardList/CardList";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 const getData = async () => {
   try {
