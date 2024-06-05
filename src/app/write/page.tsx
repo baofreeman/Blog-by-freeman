@@ -9,7 +9,6 @@ import {
 import styles from "./writePage.module.css";
 import "react-quill/dist/quill.snow.css";
 import { useEffect, useState } from "react";
-import ReactQuill from "react-quill";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {
@@ -125,7 +124,7 @@ const WritePage = () => {
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <CirclePlus />
+          <CirclePlus width={30} height={30} />
         </button>
         {open && (
           <div className={styles.add}>
@@ -137,14 +136,14 @@ const WritePage = () => {
             />
             <button className={styles.addButton}>
               <label htmlFor="image">
-                <Image />
+                <Image width={30} height={30} />
               </label>
             </button>
             <button className={styles.addButton}>
-              <SquareArrowOutUpRight />
+              <SquareArrowOutUpRight width={30} height={30} />
             </button>
             <button className={styles.addButton}>
-              <FileVideo />
+              <FileVideo width={30} height={30} />
             </button>
           </div>
         )}
