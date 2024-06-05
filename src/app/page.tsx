@@ -6,7 +6,7 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 
 const getData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/posts/popular", {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/popular`, {
       cache: "no-cache",
     });
     if (!res.ok) {

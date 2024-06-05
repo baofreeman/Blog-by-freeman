@@ -5,7 +5,7 @@ import Pagination from "../Pagination/Pagination";
 
 const getData = async (page: any, cat: any) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
