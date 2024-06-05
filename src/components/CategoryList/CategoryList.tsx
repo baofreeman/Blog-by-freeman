@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./categoryList.module.css";
+import styles from "./CategoryList.module.css";
 import Image from "next/image";
 
 const getData = async () => {
