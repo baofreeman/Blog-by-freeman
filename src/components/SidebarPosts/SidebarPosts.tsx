@@ -11,7 +11,11 @@ const SidebarPosts = async ({ withImage, data }: withImageType) => {
   return (
     <div className={styles.items}>
       {data?.map((item: any) => (
-        <Link href={`/posts/${item?.title}`} className={styles.item}>
+        <Link
+          href={`/posts/${item?.title}`}
+          className={styles.item}
+          key={item?.title}
+        >
           {withImage && (
             <div className={styles.imageContainer}>
               <Image
