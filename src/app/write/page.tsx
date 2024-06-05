@@ -8,10 +8,10 @@ import {
 } from "lucide-react";
 import styles from "./writePage.module.css";
 import "react-quill/dist/quill.snow.css";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   getStorage,
   ref,
@@ -30,9 +30,9 @@ const WritePage = () => {
   const [open, setOpen] = useState<OpenType>(false);
   const [value, setValue] = useState<ValueType>("");
   const [file, setFile] = useState<any>(null);
-  const [media, setMedia] = useState<any>("");
-  const [cat, setCat] = useState<any>("");
-  const [title, setTitle] = useState<any>("");
+  const [media, setMedia] = useState<string>("");
+  const [cat, setCat] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
   const { status } = useSession();
   const router = useRouter();
   const options = categoriesArray.map((option) => (
@@ -98,9 +98,9 @@ const WritePage = () => {
         catSlug: cat,
       }),
     });
-    console.log(res);
-    if (res.ok) {
-      router.push("/");
+    if (res.status === 200) {
+      const data = await res.json();
+      router.push(`/posts/${data.slug}`);
     }
   };
 

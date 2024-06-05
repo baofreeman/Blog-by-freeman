@@ -5,7 +5,6 @@ import styles from "./pagination.module.css";
 
 const Pagination = ({ page, hasPrev, hasNext }: any) => {
   const router = useRouter();
-  console.log(page);
   return (
     <div className={styles.container}>
       <button
