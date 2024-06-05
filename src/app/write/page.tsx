@@ -19,12 +19,17 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+import dynamic from "next/dynamic";
 
 type OpenType = boolean;
 type ValueType = string;
 const storage = getStorage(app);
 
 const categoriesArray: string[] = ["fashion", "style", "food", "travel"];
+
+const DynamicReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+});
 
 const WritePage = () => {
   const [open, setOpen] = useState<OpenType>(false);
@@ -110,11 +115,11 @@ const WritePage = () => {
         className={styles.input}
         type="text"
         placeholder="Tittle"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e: any) => setTitle(e.target.value)}
       />
       <select
         className={styles.selected}
-        onChange={(e) => setCat(e.target.value)}
+        onChange={(e: any) => setCat(e.target.value)}
       >
         {options}
       </select>
@@ -144,7 +149,7 @@ const WritePage = () => {
           </div>
         )}
 
-        <ReactQuill
+        <DynamicReactQuill
           className={styles.textArea}
           theme="snow"
           value={value}
