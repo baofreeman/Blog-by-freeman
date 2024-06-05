@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./footer.module.css";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,17 +11,11 @@ const Footer = () => {
           <Image src="/images/p1.png" alt="lama blog" width={50} height={50} />
           <h1 className={styles.logoText}>Freeman Blog</h1>
         </div>
-        <p className={styles.desc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-          necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-          porro sequi, totam minima consequuntur, aspernatur deleniti vero
-          repellendus dorales.
-        </p>
+        <p className={styles.desc}>Share your life</p>
         <div className={styles.icons}>
-          <Image src="/images/p1.png" alt="" width={18} height={18} />
-          <Image src="/images/p1.png" alt="" width={18} height={18} />
-          <Image src="/images/p1.png" alt="" width={18} height={18} />
-          <Image src="/images/p1.png" alt="" width={18} height={18} />
+          <Facebook width={28} height={28} />
+          <Instagram width={28} height={28} />
+          <Twitter width={28} height={28} />
         </div>
       </div>
       <div className={styles.links}>
@@ -35,15 +30,8 @@ const Footer = () => {
           <span className={styles.listTitle}>Tags</span>
           <Link href="/">Style</Link>
           <Link href="/">Fashion</Link>
-          <Link href="/">Coding</Link>
+          <Link href="/">Food</Link>
           <Link href="/">Travel</Link>
-        </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Social</span>
-          <Link href="/">Facebook</Link>
-          <Link href="/">Instagram</Link>
-          <Link href="/">Tiktok</Link>
-          <Link href="/">Youtube</Link>
         </div>
       </div>
     </div>

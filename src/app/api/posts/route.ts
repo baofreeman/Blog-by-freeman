@@ -6,7 +6,7 @@ export const GET = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const page: any = searchParams.get("page");
   const cat: any = searchParams.get("cat");
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 4;
 
   const query = {
     take: POST_PER_PAGE,

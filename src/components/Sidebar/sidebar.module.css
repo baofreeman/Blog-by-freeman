@@ -1,5 +1,6 @@
 .container {
   flex: 2;
+  margin-top: 50px;
 }
 
 .subtitle {
@@ -8,7 +9,9 @@
   font-weight: 400;
 }
 .title {
-  font-size: 28px;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1024px) {

@@ -11,7 +11,7 @@ import "react-quill/dist/quill.snow.css";
 import { ChangeEvent, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import {
   getStorage,
   ref,
@@ -24,19 +24,26 @@ type OpenType = boolean;
 type ValueType = string;
 const storage = getStorage(app);
 
+const categoriesArray: string[] = ["fashion", "style", "food", "travel"];
+
 const WritePage = () => {
   const [open, setOpen] = useState<OpenType>(false);
   const [value, setValue] = useState<ValueType>("");
   const [file, setFile] = useState<any>(null);
   const [media, setMedia] = useState<any>("");
+  const [cat, setCat] = useState<any>("");
   const [title, setTitle] = useState<any>("");
   const { status } = useSession();
   const router = useRouter();
+  const options = categoriesArray.map((option) => (
+    <option className={styles.option} key={option}>
+      {option}
+    </option>
+  ));
   useEffect(() => {
     const upload = () => {
       const name = new Date().getTime + file.name;
       const storageRef = ref(storage, name);
-
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -88,10 +95,13 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: "travel",
+        catSlug: cat,
       }),
     });
     console.log(res);
+    if (res.ok) {
+      router.push("/");
+    }
   };
 
   return (
@@ -102,7 +112,12 @@ const WritePage = () => {
         placeholder="Tittle"
         onChange={(e) => setTitle(e.target.value)}
       />
-      <input type="text" placeholder="category" />
+      <select
+        className={styles.selected}
+        onChange={(e) => setCat(e.target.value)}
+      >
+        {options}
+      </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <CirclePlus />
@@ -136,7 +151,11 @@ const WritePage = () => {
           onChange={setValue}
         />
       </div>
-      <button className={styles.publish} onClick={handleSubmit}>
+      <button
+        className={styles.publish}
+        onClick={handleSubmit}
+        disabled={!value || !cat || !title || !media}
+      >
         Publish
       </button>
     </div>

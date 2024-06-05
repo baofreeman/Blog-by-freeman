@@ -22,6 +22,34 @@
   flex: 1;
   font-weight: bold;
 }
+.linkTitle {
+  position: relative;
+}
+
+.linkTitle:hover::after {
+  background-color: aqua;
+  opacity: 1;
+}
+
+.active.linkTitle::after {
+  opacity: 1;
+  background-color: aqua;
+}
+
+.linkTitle::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 16px;
+  z-index: 100;
+  opacity: 0;
+  display: block;
+  transform: scale(0.8, 1);
+  transition: all 150ms ease-in-out 0s;
+}
 
 .buger {
   display: flex;

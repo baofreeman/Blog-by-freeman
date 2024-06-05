@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./sidebarCategory.module.css";
+
 const SidebarCategory = () => {
   return (
     <div className={styles.categoryList}>
@@ -17,12 +18,6 @@ const SidebarCategory = () => {
       </Link>
       <Link href="/blog" className={`${styles.categoryItem} ${styles.travel}`}>
         Travel
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.culture}`}>
-        Culture
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.coding}`}>
-        Coding
       </Link>
     </div>
   );
