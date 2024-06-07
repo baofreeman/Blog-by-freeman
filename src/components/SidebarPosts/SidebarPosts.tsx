@@ -18,12 +18,7 @@ const SidebarPosts = async ({ withImage, data }: withImageType) => {
         >
           {withImage && (
             <div className={styles.imageContainer}>
-              <Image
-                src="/images/p1.png"
-                alt=""
-                fill
-                className={styles.image}
-              />
+              <Image src={item?.img} alt="" fill className={styles.image} />
             </div>
           )}
           <div className={styles.textContainer}>

@@ -10,9 +10,9 @@ const Navbar = () => {
   const pathname = usePathname();
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <Image src={"/images/logo.jpg"} alt="" width={48} height={48} />
-      </div>
+      </Link>
       <div className={styles.links}>
         <Link href="/" className={styles.link}>
           <span

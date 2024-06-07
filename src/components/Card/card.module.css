@@ -45,6 +45,10 @@
   padding: 2px 0px;
 }
 
+.cardTitle {
+  font-size: 1.8rem;
+}
+
 .cardTitle,
 .desc {
   width: 100%;
@@ -55,6 +59,7 @@
 }
 
 .desc {
+  font-size: 1.6rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
 }

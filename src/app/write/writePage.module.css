@@ -37,6 +37,11 @@
   border-color: #3e3e3e;
 }
 
+.addButton:disabled {
+  color: #3e3e3e;
+  cursor: not-allowed;
+}
+
 .publish:disabled {
   cursor: not-allowed;
   background-color: #3e3e3e;

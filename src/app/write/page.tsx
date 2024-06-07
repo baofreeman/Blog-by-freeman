@@ -80,7 +80,7 @@ const WritePage = () => {
 
   if (status === "loading") return <div>Loading...</div>;
   if (status === "unauthenticated") {
-    router.push("/");
+    router.push("/login");
   }
 
   const slugify = (str: string) =>
@@ -139,10 +139,10 @@ const WritePage = () => {
                 <Image width={30} height={30} />
               </label>
             </button>
-            <button className={styles.addButton}>
+            <button className={styles.addButton} disabled={true}>
               <SquareArrowOutUpRight width={30} height={30} />
             </button>
-            <button className={styles.addButton}>
+            <button className={styles.addButton} disabled={true}>
               <FileVideo width={30} height={30} />
             </button>
           </div>

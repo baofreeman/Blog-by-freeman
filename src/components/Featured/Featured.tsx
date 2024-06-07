@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Featured = ({ data }: { data: any }) => {
   const filterViews = (list: any) => {
@@ -28,7 +29,9 @@ const Featured = ({ data }: { data: any }) => {
           <div className={styles.textContainer}>
             <h1 className={styles.postTitle}>{result[0]?.title}</h1>
             <p className={styles.postDesc}>{result[0]?.desc}</p>
-            <button className={styles.button}>Read More</button>
+            <Link className={styles.link} href={`/posts/${result[0]?.slug}`}>
+              Read More
+            </Link>
           </div>
         </div>
       )}
